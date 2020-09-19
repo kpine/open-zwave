@@ -1,5 +1,5 @@
 <!-- GE(Jasco) 14294 Z-Wave Plus Dimmer Switch -->
-<Product Revision="7" xmlns="https://github.com/OpenZWave/open-zwave">
+<Product Revision="8" xmlns="https://github.com/OpenZWave/open-zwave">
   <MetaData>
     <MetaDataItem name="OzwInfoPage">http://www.openzwave.com/device-database/0063:3038:4944</MetaDataItem>
     <MetaDataItem name="ProductPic">images/ge/14294-dimmer.png</MetaDataItem>
@@ -33,6 +33,7 @@ and release the top or bottom of the wireless smart dimmer
       <Entry author="Justin Hammond - Justin@dynam.ac" date="02 Jun 2019" revision="5">Updated Metadata Import from Z-Wave Alliance Database - https://products.z-wavealliance.org/products/2168/xml</Entry>
       <Entry author="Justin Hammond" date="26 Jun 2020" revision="6">Add Verified Change Flag </Entry>
       <Entry author="Keith Pine" date="14 Sep 2020" revision="7">Fixed metadata, added undocumented configuration parameters</Entry>
+      <Entry author="Keith Pine" date="19 Sep 2020" revision="8">Force Basic Set to Report, ignore mapping</Entry>
     </ChangeLog>
   </MetaData>
   <!-- Configuration -->
@@ -84,6 +85,12 @@ and release the top or bottom of the wireless smart dimmer
   <CommandClass id="38">
     <Compatibility>
       <VerifyChanged index="0">true</VerifyChanged>
+    </Compatibility>
+  </CommandClass>
+  <CommandClass id="32">
+    <Compatibility>
+      <IgnoreMapping>true</IgnoreMapping>
+      <SetAsReport>true</SetAsReport>
     </Compatibility>
   </CommandClass>
   <!-- Association Groups -->
